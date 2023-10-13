@@ -1,0 +1,63 @@
+def zad1():
+    rownanie = (512 - 282) / (47 * 48 + 5)
+    print(rownanie)
+
+
+def zad2():
+    liczba = int(input("Wpisz liczbe: "))
+    print(liczba, '---', liczba * 2, '---', liczba * 3, '---', liczba * 4, '---', liczba * 5)
+
+
+def zad3():
+    liczba1 = float(input("Wpisz pierwsza liczbe: "))
+    liczba2 = float(input("Wpisz druga liczbe: "))
+    print(liczba1 * liczba2)
+
+
+def zad4():
+    waga = float(input("Podaj wage w kilogramach: "))
+    print("Waga w funtach to ", waga * 2.2)
+
+
+def zad5():
+    suma = 0
+    for i in range(1, 11):
+        suma += i
+    print(suma)
+
+
+def zad6():
+    suma = 1
+    for i in range(1, 11):
+        suma *= i
+    print(suma)
+
+
+def zad7():
+    rok = int(input("Podaj rok "))
+    if rok % 4 == 0 and rok % 100 != 0 or rok % 400 == 0:
+        print("Liczba dni pierwszych trzech miesiecy roku przestepnego wynosi", 31 + 29 + 31)
+    else:
+        print("To nie jest rok przestepny")
+
+
+def zad8():
+    poczatkowa_kwota = 1000
+    k1 = poczatkowa_kwota * (1 + 0.06) * 1
+    k2 = k1 * (1 + 0.06)
+    k3 = k2 * (1 + 0.06)
+    print("Po roku wynosi ", k1, "po dwoch latach ", k2, "po trzech latach", k3)
+
+
+def main():
+    zad1()
+    zad2()
+    zad3()
+    zad4()
+    zad5()
+    zad6()
+    zad7()
+    zad8()
+
+
+main()
