@@ -1,0 +1,147 @@
+def silnia(n):
+    if n > 1:
+        return n * silnia(n - 1)
+    return 1
+
+
+def zad1_a():
+    a: int = 0
+    for i in range(2, 101, 2):
+        a += i
+    print(a)
+
+
+def zad1_b():
+    b: int = 0
+    for i in range(1, 101):
+        b += i ** 2
+    print(b)
+
+
+def zad1_c():
+    c: int = 0
+    for i in range(1, 64):
+        c += 2 ** i
+    print(c)
+
+
+def zad1_d():
+    a = int(input("Podaj liczbe nieparzysta: "))
+    b = int(input("Podaj liczbe nieparzysta: "))
+    c = 0
+    for i in range(a // 2 * 2, b + 1, 2):
+        c += i
+    print(c)
+
+
+def zad2_a():
+    n = int(input("Podaj liczbe n:"))
+    wynika = 0
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        wynika += a
+    print(wynika)
+
+
+def zad2_b():
+    n = int(input("Podaj liczbe n:"))
+    wynikb = 1
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        wynikb *= a
+    print(wynikb)
+
+
+def zad2_c():
+    n = int(input("Podaj liczbe n:"))
+    wynikc = 0
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        a **= 2
+        a **= (1 / 2)
+        wynikc += a
+    print(wynikc)
+
+
+def zad2_d():
+    n = int(input("Podaj liczbe n:"))
+    wynikd = 0
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        a **= 2
+        a **= (1 / 2)
+        a **= (1 / 2)
+        wynikd += a
+    print(wynikd)
+
+
+def zad2_e():
+    n = int(input("Podaj liczbe n:"))
+    wynike = 1
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        a **= 2
+        a **= (1 / 2)
+        wynike *= a
+    print(wynike)
+
+
+def zad2_f():
+    n = int(input("Podaj liczbe n:"))
+    wynikf = 0
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        a **= 2
+        wynikf += a
+    print(wynikf)
+
+
+def zad2_g():
+    n = int(input("Podaj liczbe n:"))
+    wynikg1 = 0
+    wynikg2 = 1
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        wynikg1 += a
+        wynikg2 *= a
+    print(wynikg1)
+    print(wynikg2)
+
+
+def zad2_h():
+    n = int(input("Podaj liczbe n:"))
+    wynikh = 0
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        wynikh += (-1) ** (i + 1) * a
+    print(wynikh)
+
+
+def zad2_i():
+    n = int(input("Podaj liczbe n:"))
+    wyniki = 0
+    for i in range(1, n + 1):
+        a = float(input("Podaj liczbe: "))
+        wyniki += ((-1) ** (i + 1) * a) / silnia(i)
+    print(wyniki)
+
+
+def zad3():
+    n = int(input("Podaj ilosc liczb: "))
+    b = float(input("Podaj kolejna liczbe: "))
+    for i in range(2, n + 1):
+        a = float(input("Podaj kolejna liczbe: "))
+        print(a)
+    print(b)
+
+
+def zad4():
+    for i in range(1, 65):
+        print("Mężny bądź, chroń pułk twój i sześć flag.")
+
+
+def main():
+    zad4()
+
+
+main()
