@@ -1,0 +1,121 @@
+def zad1():
+    n = float(input("Podaj liczbe zmiennoprzecinkowa: "))
+    if n >= 0:
+        print(n)
+    else:
+        print(n*(-1))
+
+
+
+def zad2():
+    n = float(input("Podaj liczbe: "))
+    def sng(n):
+        if n > 1:
+            return 1
+        elif n == 0:
+            return 0
+        else:
+            return -1
+    print(sng(n))
+
+
+
+def zad3():
+    x = float(input("Podaj I liczbe zmiennoprzecinkowa: "))
+    y = float(input("Podaj II liczbe zmiennoprzecinkowa: "))
+    if y == 0:
+        print("Druga liczba jest rowna zero, dzielenie niemozliwe")
+    else:
+        print(x/y)
+
+
+
+def zad4():
+    a = float(input("Podaj I liczbe zmiennoprzecinkowa: "))
+    b = float(input("Podaj II liczbe zmiennoprzecinkowa: "))
+    if a==0:
+        print("a jest rowne 0, niemozliwe dzialanie")
+    else:
+        x=(-b)/a
+        print(x)
+
+
+
+def zad5():
+    x= float(input("Podaj I liczbe zmiennoprzecinkowa: "))
+    y= float(input("Podaj II liczbe zmiennoprzecinkowa: "))
+    z= float(input("Podaj III liczbe zmiennoprzecinkowa: "))
+    if x>y and x>z and z>y:
+        print("Najwieksza liczba to ",x," a najmniejsza to ", y)
+    elif x>y and x>z and z<y:
+        print("Najwieksza liczba to ",x," a najmniejsza to ", z)
+    elif x<y and y>z and z>x:
+        print("Najwieksza liczba to ",y," a najmniejsza to ", x)
+    elif x < y and y > z and z < x:
+        print("Najwieksza liczba to ", y, " a najmniejsza to ", z)
+    elif z>y and x<z and x>y:
+        print("Najwieksza liczba to ",z, " a najmniejsza to ", y)
+    elif z > y and x < z and x < y:
+        print("Najwieksza liczba to ", z, " a najmniejsza to ", x)
+
+
+
+def zad6():
+    x = float(input("Podaj I liczbe zmiennoprzecinkowa: "))
+    y = float(input("Podaj II liczbe zmiennoprzecinkowa: "))
+    z = float(input("Podaj III liczbe zmiennoprzecinkowa: "))
+    def max3(x,y,z):
+        max_custom = 0
+        min_custom = 0
+        for i in (x,y,z):
+            if i == x:
+                min_custom=x
+                max_custom=x
+            if i > max_custom:
+                max_custom=i
+            if i < min_custom:
+                min_custom=i
+        return min_custom, max_custom
+    print("Max = ", max3(x,y,z)[1])
+    print("Min = ", max3(x,y,z)[0])
+
+def zad7():
+    a = float(input("Podaj dlugosc I boku trojkata: "))
+    b = float(input("Podaj dlugosc II boku trojkata: "))
+    c = float(input("Podaj dlugosc III boku trojkata: "))
+    if a<0 or b<0 or c<0 and a+b>c or b+c>a or a+c > b:
+        print("To nie moga byc boki trojkata")
+    else:
+        obwod = a+b+c
+        po= obwod/2
+        pole = (po*(po-a)*(po-b)*(po-c))**(1/2)
+        print("Obwod trojkata rowna sie ", obwod, "cm, a pole trojkata rowna sie ", pole, "cm^2")
+
+
+
+def zad8():
+    a = float(input("Podaj dlugosc I boku trojkata: "))
+    b = float(input("Podaj dlugosc II boku trojkata: "))
+    c = float(input("Podaj dlugosc III boku trojkata: "))
+    def poprawne_boki(a,b,c):
+        if a<0 or b<0 or c<0 and a+b>c or b+c>a or a+c > b:
+            return False
+        else:
+            return True
+    zgodnosc = poprawne_boki(a,b,c)
+    def obwod(a,b,c):
+        return a+b+c
+    n = obwod(a,b,c)
+    def pole(a,b,c,n):
+        po = n / 2
+        return (po * (po - a) * (po - b) * (po - c)) ** (1 / 2)
+    if poprawne_boki(a,b,c)==True:
+        print(n,"\n",pole(a,b,c,n))
+    else:
+        print("To nie jest trojkat")
+
+
+def main():
+    zad6()
+
+main()
