@@ -1,0 +1,125 @@
+def silnia(n):
+    if n > 1:
+        return n*silnia(n-1)
+    return 1
+def zad1():
+    n = abs(int(input("Wpisz liczbe naturalna: ")))
+    def zad1_a(liczba):
+        licznik = 0
+        for i in range(liczba):
+            a = abs(int(input("Wpisz liczbe naturalna: ")))
+            if a%2==1:
+                licznik+=1
+        return licznik
+    # print("Liczb nieparzystych jest:", zad1_a(n))
+    def zad1_b(liczba):
+        licznik = 0
+        for i in range(liczba):
+            a = abs(int(input("Wpisz liczbe naturalna: ")))
+            if a%3==0 and a%5!=0:
+                licznik+=1
+        return licznik
+    # print("Liczb podzielnych przez 3 i niepodzielnych przez 5 jest:", zad1_b(n))
+    def zad1_c(liczba):
+        licznik = 0
+        for i in range(liczba):
+            a = abs(int(input("Wpisz liczbe naturalna: ")))
+            if (a**(1/2))%2==0:
+                licznik+=1
+        return licznik
+    # print("Liczb, ktore sa kwadratami liczby parzystej sa:", zad1_c(n))
+    def zad1_d(liczba):
+        if liczba>2:
+            licznik = 0
+            a1 = abs(int(input("Wpisz liczbe naturalna: ")))
+            a2 = abs(int(input("Wpisz liczbe naturalna: ")))
+            for i in range(liczba-2):
+                a3 = abs(int(input("Wpisz liczbe naturalna: ")))
+                if a2 < (a1+a3)/2:
+                    licznik +=1
+                a1 = a2
+                a2 = a3
+            return licznik
+        else:
+            return 0
+    # print("Liczb, ktore spelniaja warunek jest:", zad1_d(n))
+    def zad1_e(liczba):
+        licznik = 0
+        for i in range(1,liczba+1):
+            a = abs(int(input("Wpisz liczbe naturalna: ")))
+            if 2**i < a and a < silnia(i):
+                licznik+=1
+        return licznik
+    # print("Liczb, ktore spelniaja dany warunek jest:", zad1_e(n))
+    def zad1_f(liczba):
+        licznik = 0
+        for i in range(1, liczba+1):
+            a = abs(int(input("Wpisz liczbe naturalna: ")))
+            if i%2==1 and a%2==0:
+                licznik+=1
+        return licznik
+    # print("Liczb, ktore maja nieparzysty number i sa parzyste jest:", zad1_f(n))
+    def zad1_g(liczba):
+        licznik = 0
+        for i in range(liczba):
+            a = int(input("Wpisz liczbe naturalna: "))
+            if a > 0 and a%2==1:
+                licznik+=1
+        return licznik
+    # print("Liczb, ktore sa nieparzyste i nieujemne jest:", zad1_g(n))
+    def zad1_h(liczba):
+        licznik = 0
+        for i in range(liczba):
+            a = abs(int(input("Wpisz liczbe naturalna: ")))
+            if a < i**2:
+                licznik +=1
+        return licznik
+    print("Liczb, ktore spelniaja warunek jest", zad1_h(n))
+
+def zad2():
+    n = abs(int(input("Wpisz liczbe naturalna n: ")))
+    suma = 0
+    for i in range(n):
+        a = float(input("Wpisz liczbe rzeczywista: "))
+        if a%2 == 0:
+            suma += a
+    suma *= 2
+    print("Podwojona suma liczb dodatnich wynosi", suma)
+def zad3():
+    n = abs(int(input("Wpisz liczbe naturalna n: ")))
+    licznikd, licznik0, liczniku = 0,0,0
+    for i in range(n):
+        a = float(input("Podaj liczbe: "))
+        if a > 0:
+            licznikd +=1
+        elif a == 0:
+            licznik0 +=1
+        else:
+            liczniku +=1
+    print("Liczb dodatnich jest "+ str(licznikd) + " Liczb ujemnych jest " + str(liczniku) + " a zer jest " + str(licznik0))
+def zad4():
+    n = abs(int(input("Wpisz liczbe naturalna n: ")))
+    a = float(input("Wpisz liczbe: "))
+    mini = a
+    maxi = a
+    for i in range(n-1):
+        a = float(input("Wpisz liczbe: "))
+        if a < mini:
+            mini = a
+        elif a > maxi:
+            maxi = a
+    print("Najmniejsza liczba to " + str(mini)+ " a najwieksza to "+ str(maxi) )
+def zad5():
+    n = abs(int(input("Wpisz liczbe naturalna n: ")))
+    a = float(input("Wpisz liczbe rzeczywista: "))
+    licznik = 0
+    for i in range(n-1):
+        b = float(input("Wpisz liczbe rzeczywista: "))
+        if a > 0 and b>0:
+            licznik +=1
+        a=b
+    print("Ilosc par:", licznik)
+def main():
+    zad5()
+
+main()
