@@ -1,0 +1,92 @@
+import math
+def zad1():
+    n = abs(int(input("Wpisz liczbe naturalna: ")))
+    def zad1_a(liczba):
+        wynik = 2**liczba
+        return wynik
+    print("Wynik zadania a wynosi", zad1_a(n))
+    def zad1_b(liczba):
+        wynik = 1
+        while liczba>0:
+            wynik *= liczba
+            liczba-=1
+        return wynik
+    print("Wynik zadania b wynosi", zad1_b(n))
+    def zad1_c(liczba):
+        dzielnik = 1
+        wynik = 1
+        while dzielnik <= n:
+            wynik *= (1+(1/(dzielnik**2)))
+            dzielnik +=1
+        return wynik
+    print("Wynik zadania c wynosi", zad1_c(n))
+    def zad1_d(liczba):
+        wynik = 0
+        i=1
+        while i <= liczba:
+            j = 1
+            dzielnik = 0
+            while j <= i:
+               dzielnik+=math.sin(j)
+               j += 1
+            if dzielnik < 1:
+                dzielnik += 1
+            wynik +=  (1/dzielnik)
+            i += 1
+        return wynik
+    print("Wynik zadania d wynosi", zad1_d(n))
+def zad2():
+    n = abs(int(input("Wpisz liczbe naturalna: ")))
+    a = float(input("Wpisz liczbe rzeczywista: "))
+    def zad2_a(n,a):
+        return a**n
+    print("Wynik zadania a wynosi", zad2_a(n,a))
+    def zad2_b(n,a):
+        wynik = 1
+        while n > 0:
+            n -=1
+            wynik *= (a + n)
+        return wynik
+    print("Wynik zadania b wynosi", zad2_b(n,a))
+def zad5():
+    n = abs(int(input("Wpisz liczbe naturalna: ")))
+    def zad5_a(n):
+        ile = 0
+        while n > 0:
+            ile += 1
+            n //= 10
+        return ile
+    def zad5_b(n):
+        suma = 0
+        while n > 0:
+            suma += n % 10
+            n //= 10
+        return suma
+    def zad5_c(n):
+        while n > 9:
+            n //= 10
+        return n
+    print(zad5_a(n), zad5_b(n), zad5_c(n))
+def zad6():
+    suma = 0
+    n = abs(int(input("Wpisz liczbe naturalna: ")))
+    m = abs(int(input("Wpisz liczbe naturalna: ")))
+    def zad6_ile(n):
+        ile = 0
+        while n > 0:
+            ile += 1
+            n //= 10
+        return ile
+    if m < zad6_ile(n):
+        while m > 0:
+            suma += n % 10
+            n //= 10
+            m-=1
+    print(suma)
+
+
+
+def main():
+    zad6()
+
+main()
