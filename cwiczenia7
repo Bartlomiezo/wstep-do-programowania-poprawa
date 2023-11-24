@@ -1,0 +1,56 @@
+def ile_ujemnych(lista):
+    counter = 0
+    for i in lista:
+        if i<0:
+            counter +=1
+    return counter
+def iloczyn(lista):
+    wynik = 1
+    for i in lista:
+        wynik *= i
+    return wynik
+def minmax(lista):
+    mini = lista[0]
+    maxi = lista[0]
+    for i in lista:
+        if i < mini:
+            mini = i
+        elif i > maxi:
+            maxi = i
+    return (mini,maxi)
+def suma_przemienna(lista):
+    wynik = 0
+    for i in range(len(lista)):
+        if i % 2 == 0:
+            wynik +=lista[i]
+        else:
+            wynik -=lista[i]
+    return wynik
+def zad7():
+    i = 0
+    list =[]
+    while i<10:
+        a = int(input("Wpisz liczbe: "))
+        if a not in list:
+            list.append(a)
+            i+=1
+    return list
+def zad8(list):
+    for i in range(2,10001):
+        list.append(i)
+    for i in range(2,101):
+        for j in range(len(list)):
+            if list[j] % i == 0 and list[j] != i:
+                list.pop(j)
+    return list
+def main():
+    # lista = [1, 4, 16, 9, 7, 4,9,11]
+    # print(f"Liczba ujemnych elementow: {ile_ujemnych(lista)}")
+    # print(f"Wynik iloczynu wynosi {iloczyn(lista)}")
+    # print(minmax(lista))
+    # print(suma_przemienna(lista))
+    # print(zad7())
+    lista = []
+    print(zad8(lista))
+if __name__ == "__main__":
+    main()
