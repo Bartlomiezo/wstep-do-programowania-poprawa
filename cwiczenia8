@@ -1,0 +1,37 @@
+def zad1(set1, set2, set3):
+    def zad1a(s1, s2):
+        wynika = s1 ^ s2
+        return wynika
+
+    print("Zad1a:",zad1a(set1, set2))
+
+    def zad1b(s1, s2, s3):
+        wynikb = (s1 - (s2 | s3)) | (s2 - (s1 | s3)) | (s3 - (s1 | s2))
+        return wynikb
+
+    print("Zad1b:",zad1b(set1, set2, set3))
+
+    def zad1c(s1, s2, s3):
+        wynikc = (s1 & s2) - s3
+        return wynikc
+
+    print("Zad1c:",zad1c(set1, set2, set3))
+
+    def zad1d(s):
+        set4 = set(range(1,26))
+        set4 = set4 - s
+        return set4
+
+    print("Zad1d:", zad1d(set1))
+
+
+def main():
+    set1 = {2, 3, 6, 10}
+    set2 = {3, 7, 10}
+    set3 = {3, 2, 5}
+    set4 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}
+    zad1(set1, set2, set3)
+
+
+if __name__ == "__main__":
+    main()
