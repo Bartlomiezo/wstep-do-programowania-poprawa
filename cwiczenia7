@@ -36,12 +36,15 @@ def zad7():
             i+=1
     return list
 def zad8(list):
-    for i in range(2,10001):
+    for i in range(2, 10001):
         list.append(i)
-    for i in range(2,101):
-        for j in range(len(list)):
+    for i in range(2, 101):
+        j = 0
+        while j < len(list):
             if list[j] % i == 0 and list[j] != i:
                 list.pop(j)
+                continue
+            j += 1
     return list
 def main():
     # lista = [1, 4, 16, 9, 7, 4,9,11]
