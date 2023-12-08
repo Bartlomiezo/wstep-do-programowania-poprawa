@@ -1,0 +1,80 @@
+import string
+import sys
+
+
+def custom_square_root(n):
+    if n>0:
+        return n**(1/2)
+    else:
+        print("Wpisano wartosc ujemna")
+        sys.exit(0)
+def zad1():
+    set1 = {1, 3, 5, 9}
+    set2 = {1, 3, 4, 6}
+    set3 = {1, 6, 10, 16}
+
+    def zad1e(s1, s2, s3):
+        set4 = set(range(1, 26))
+        return set4 - (s1 & s2 & s3)
+
+    print("Zad1e:", zad1e(set1, set2, set3))
+
+    def zad1f(s1, s2, s3):
+        set4 = set(range(1, 26))
+        return set4 - (s1 | s2 | s3)
+
+    print("Zad1f:", zad1f(set1, set2, set3))
+
+
+def zad2():
+    a = set(input("Wpisz pierwszy napis: "))
+    b = set(input("Wpisz drugi napis: "))
+    alfabeta = set(string.ascii_letters)
+    znaki = set(string.printable)
+
+    def zad2a(a, b, alfabeta):
+        return a & b & alfabeta
+
+    print("Zad2a:", zad2a(a, b, alfabeta))
+
+    def zad2b(a, b , alfabeta):
+        return alfabeta &(a|b)
+
+    print("Zad2b:", zad2b(a,b, alfabeta))
+
+    def zad2c(a, b, alfabeta):
+        return alfabeta - (a | b)
+
+    print("Zad2c:", zad2c(a, b, alfabeta))
+
+    def zad2d(a, b, alfabeta):
+        return (a & b) - alfabeta
+
+    print("Zad2d:", zad2d(a, b, alfabeta))
+
+    def zad2e(a,b,alfabeta):
+        return (a|b) - alfabeta
+    print("Zad2e:", zad2e(a,b,alfabeta))
+
+def zad3():
+    n = int(input("Wpisz liczbe: "))
+    primes = set(range(2,n+1))
+    roof_of_n = custom_square_root(n)
+    new_set = set()
+    for i in range(2,int(roof_of_n)+1):
+        for j in primes:
+            if j != i and j % i == 0:
+                new_set.add(j)
+    primes -= new_set
+    print(primes)
+
+
+def main():
+    # zad1()
+    # zad2()
+    zad3()
+
+
+
+if __name__ == "__main__":
+    main()
