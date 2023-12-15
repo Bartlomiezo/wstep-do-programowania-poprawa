@@ -1,0 +1,72 @@
+def zad1():
+    slowo = "aBrakAdabrA123"
+
+    def zad1a(slowo):
+        new_dict = {}
+        for i in slowo:
+            if i not in new_dict:
+                new_dict[i] = 1
+            else:
+                new_dict[i] += 1
+        return new_dict
+
+    print(zad1a(slowo))
+    def zad1b(slowo):
+        new_dict = {}
+        for i in slowo:
+            if i.isalpha():
+                if i not in new_dict:
+                    new_dict[i] = 1
+                else:
+                    new_dict[i] += 1
+        return new_dict
+
+    print(zad1b(slowo))
+    def zad1c(slowo):
+        new_dict = {}
+        slowo = slowo.lower()
+        for i in slowo:
+            if i.isalpha():
+                if i not in new_dict:
+                    new_dict[i] = 1
+                else:
+                    new_dict[i] += 1
+        return new_dict
+
+    print(zad1c(slowo))
+    def zad1d(slowo):
+        new_dict = {}
+        slowo = slowo.lower()
+        for i in slowo:
+            if i.isalpha():
+                if i not in new_dict:
+                    new_dict[i] = 1
+                else:
+                    new_dict[i] += 1
+        return max(new_dict.items(), key = lambda k: k[1])
+
+    print(zad1d(slowo))
+def zad2():
+    new_dict={}
+    while True:
+        n = input("Wpisz liczbę całkowitą: ")
+        if n.strip("-").isdigit():
+            if n not in new_dict:
+                new_dict[n] = 1
+            else:
+                new_dict[n] += 1
+        elif n == "":
+            print(new_dict)
+            break
+        else:
+            print("Błędny wpis lub liczba nie jest całkowita")
+
+
+def main():
+    slowo = "abrakadabra"
+    zad2()
+
+
+
+if __name__ == "__main__":
+    main()
