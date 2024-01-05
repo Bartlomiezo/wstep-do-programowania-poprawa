@@ -1,0 +1,24 @@
+def nowa_lista():
+    lista = []
+    for i in range(1,3):
+        for j in range(0,5):
+            lista.append(j)
+    return lista
+def nieparzyste(n):
+    licznik = 0
+    for i in range(n):
+        a = int(input("Wpisz liczbe naturalna: "))
+        if a % 2 == 1:
+            licznik += 1
+    return licznik
+def palindrom(napis):
+    napis = napis.lower()
+    return napis == napis[::-1]
+
+def main():
+    print(nowa_lista())
+    n = 5
+    # print(nieparzyste(n))
+    print(palindrom("apokopa"))
+if __name__ == "__main__":
+    main()
